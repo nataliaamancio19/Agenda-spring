@@ -1,0 +1,42 @@
+<html>
+  <head>
+  <title>Contatos</title>
+  </head>
+  <body>
+        <h2>Lista de Contatos</h2>
+		<table class="table table-bordered table-striped">
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Favorito</th>
+            <th>Cep</th>
+            <th>Visualizar</th>
+            <th>Editar</th>
+            <th>Deletar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr th:if="${#lists.isEmpty(contatos)}">
+            <td colspan="4">Nenhum contato cadastrado.</td>
+          </tr>
+          <tr th:each="contato : ${contatos}">
+            <td th:text="${contato.nome}"></td>
+            <td th:text="${contato.telefone}"></td>
+            <td th:text="${contato.email}"></td>
+            <td th:if="${contato.favorito} == true">☑</td>
+            <td th:text="${contato.cep}"></td>
+            <td><a href="visualizarContato.html" th:href="@{'/' + ${contato}}">Visualizar</a></td>
+            <td><a href="editarContato.html" th:href="@{'/' + ${contato}}">Editar</a></td>
+            <td><a href="deletarContato.html" th:href="@{'/' + ${contato}}">Deletar</a></td>
+          </tr>
+        </tbody>
+      </table>
+		<h3>Adicione um novo contato:</h3>
+        <form method="GET" action="adicionaContato.html">
+			  <input type="submit" value="Adicionar contato"></input>
+        </form>
+  </body>
+  </html>	
+	 

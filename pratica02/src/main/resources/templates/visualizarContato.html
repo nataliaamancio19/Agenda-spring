@@ -1,0 +1,56 @@
+<html>
+  <head>
+  <title>Contatos</title>
+  </head>
+  <body>
+        <h2 th:text="${contato.nome}"></h2>
+		<dt class="bookHeadline">
+			  <span>Telefone:</span>
+			  <span th:text="${contato.telefone}"></span><br/>
+
+			  <span>Email:</span>			  
+			  <span th:text="${contato.email}"></span>
+			  <br/>
+			  
+			  <span>Cep:</span>
+			  <span th:text="${contato.endereco.cep}"></span>
+			  <br/>
+			  
+			  <span>Logradouro:</span>
+			  <span th:text="${contato.endereco.logradouro}"></span>
+			  <br/>
+			  
+			  <span>Complemento:</span>
+			  <span th:text="${contato.endereco.complemento}"></span>
+			  <br/>
+			  
+			  <span>Bairro:</span>
+			  <span th:text="${contato.endereco.bairro}"></span>
+			  <br/>
+			  
+			  <span>Localidade:</span>
+			  <span th:text="${contato.endereco.localidade}"></span>
+			  <br/>
+			  
+			  <span>UF:</span>
+			  <span th:text="${contato.endereco.uf}"></span>
+			  <br/>
+			  
+			  <span>Unidade:</span>
+			  <span th:text="${contato.endereco.unidade}"></span>
+			  <br/>
+			  
+			  <span>IBGE:</span>
+			  <span th:text="${contato.endereco.ibge}"></span>
+			  <br/>
+			  
+			  <span>Gia:</span>
+			  <span th:text="${contato.endereco.gia}"></span>
+			  <br/>
+			  <form method="GET" action="listaContatos.html">
+			  <input type="submit" value="Visualizar todos os contatos"></input>
+			  </form>
+		</dt>
+  </body>
+  </html>	
+	 
